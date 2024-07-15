@@ -3,10 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='app.css') }}">
 </head>
 <body>
     <h1>Weather Data API</h1>
     <p> API Format: http://127.0.0.1:5000/api/v1/station/date</p>
-    <p> Example: http://127.0.0.1:5000/api/v1/10/2018-01-01</p>
+    <p> Get Temp for one station by date: http://127.0.0.1:5000/api/v1/10/2018-01-01</p>
+    <p> For one station All Time: http://127.0.0.1:5000/api/v1/10/</p>
+    <p> For one station by Year: http://127.0.0.1:5000/api/v1/yearly/10/2018</p>
+    <div id='stations'> 
+        {{ data|safe  }}
+    </div>
 </body>
 </html>
